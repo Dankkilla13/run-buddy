@@ -14,12 +14,19 @@ header {
     background-color: #39a6b2;
     display: flex;
     justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;top: 0;
+    background-image: url("../images/flipped-hero-image.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment:fixed;
   }
   header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a { text-decoration: none;
@@ -35,10 +42,11 @@ header {
     align-items: center;
     list-style: none;
   }
-  header nav ul li a {
+  header nav ul li a:hover {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   footer {
     background: #fce138;
@@ -89,6 +97,8 @@ flex-wrap: wrap;
     right: 140px;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(252, 225, 56, 0.8);
+    border-radius: 15px;
   }
   .hero-form h3 {
     font-size: 24px;
@@ -99,7 +109,7 @@ flex-wrap: wrap;
     margin: 5px 0 15px 0;
   }
   
-  .form-input {
+  .form-input:focus {
     border: 1px solid #024e76;
     display: block;
     padding: 7px 15px;
@@ -107,16 +117,19 @@ flex-wrap: wrap;
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    outline: none;
+    background-color: rgba(255,255,255, 1);
   }
   .hero-form label {
     margin: 0 5px;
   }
-  .hero-form button {
+  .hero-form button:hover {
     color: #fce138;
     background-color: #024e76;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius:10px;
   }
   .hero-cta {
     width: 35%;
@@ -130,6 +143,7 @@ flex-wrap: wrap;
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
    .intro p {
     line-height: 1.7;
@@ -163,7 +177,7 @@ width: 50%;
   .secondary-border {
     border-color: #39a6b2;
   }
-  .step {
+  .step:last-child{
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
@@ -297,10 +311,10 @@ width: 50%;
 .flex-row {
   display: flex;
 }
-.contact-form input, .contact-form textarea{
-  border: 1px solid #024e76;
+.contact-form input:focus, .contact-form textarea:focus{
+  border: 1px solid rgb(2,78,118,0.8);
 display: block;
-
+border-radius:10px;
 padding: 7px 15px;
 
 font-size: 16px;
@@ -313,9 +327,9 @@ margin-bottom: 15px;
 
 margin-top: 5px;
 }
-.contact-form button{
+.contact-form button:hover{
   width: 100%;
-
+  border-radius:10px;
 border: none;
 
 background: #fce138;
@@ -328,26 +342,13 @@ padding: 15px 0;
 
 font-size: 16px;
 }
-.contact-form button{
-  width: 100%;
 
-border: none;
-
-background: #fce138;
-
-color: #024e76;
-
-text-align: center;
-
-padding: 15px 0;
-
-font-size: 16px;
-}
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
     padding-bottom: 0;
     justify-content: center;
+    position: relative;
   }
 
   header h1 {
