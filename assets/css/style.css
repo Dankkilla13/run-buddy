@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+  :root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  }
 body {
     /* more on this crazy alphanumerical value in a minute! */
     color: #39a6b2;
@@ -20,6 +25,7 @@ header {
     background-size: cover;
     background-position: 80%;
     background-attachment:fixed;
+    z-index: 9999;
   }
   header h1 {
     font-weight: bold;
@@ -177,7 +183,7 @@ width: 50%;
   .secondary-border {
     border-color: #39a6b2;
   }
-  .step:last-child{
+  .step:not(:last-child){
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
@@ -341,6 +347,32 @@ text-align: center;
 padding: 15px 0;
 
 font-size: 16px;
+}
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);  
+  border: 1px solid #024e76;  
+  position: absolute;
+  top: -4px;
+  left: -30px;
+}
+.radio-wrapper label::after {
+  border-radius: 50%;
+  background-image: radial-gradient(circle, #39a6b2, #024e76);
+}
+.checkbox-wrapper label::after{
+  transform: rotate(-58deg);
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
